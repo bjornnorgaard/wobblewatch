@@ -164,7 +164,7 @@
     </h6>
 
     {#if app.value.state === "initial"}
-        <button type="button" onclick={enterCountdown} class="btn btn-lg preset-filled-primary-500">Press to begin</button>
+        <button type="button" onclick={enterCountdown} class="btn btn-lg preset-filled-primary-500 text-white">Press to begin</button>
     {:else if app.value.state === "countdown" }
         <button type="button" onclick={enterError} class="btn btn-lg preset-outlined-primary-500">Get ready...</button>
     {:else if app.value.state === "waiting"}
@@ -221,7 +221,7 @@
                             <span class="text-surface-600-400">beers</span>
                         </td>
                         <td>
-                            <span class:text-surface-700-300={r.errors === 0}>{r.errors} goofs</span>
+                            <span class:text-error-700-300={r.errors !== 0}>{r.errors} goofs</span>
                         </td>
                         <td class="text-end">
                             <span>{r.avg.toFixed(0)}</span>
